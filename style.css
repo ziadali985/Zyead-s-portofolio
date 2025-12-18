@@ -349,7 +349,7 @@ body {
 
 /* Image Box */
 .home-img .img-box {
-    position: relative;
+    position: absolute;
     width: 280px;
     height: 280px;
     border-radius: 50%;
@@ -439,3 +439,4 @@ body {
     margin-top: 20px;
     margin-right: 300px;
 }
+
