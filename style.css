@@ -349,7 +349,7 @@ body {
 
 /* Image Box */
 .home-img .img-box {
-    position: absolute;
+    position: relative;
     width: 280px;
     height: 280px;
     border-radius: 50%;
@@ -443,4 +443,5 @@ body {
 home-info p{
     margin-top: 70;
 }
+
 
