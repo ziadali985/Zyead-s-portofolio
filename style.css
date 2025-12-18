@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Ubuntu+Condensed&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu Condensed", sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background: linear-gradient(135deg, #1f242d, #2c3e50);
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 25px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(31, 36, 45, 0.9);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #7cf03d;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 35px;
+    list-style: none;
+}
+
+.navbar ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    transition: .5s;
+}
+
+.navbar ul li:hover a,
+.navbar ul li.active a {
+    color: #7cf03d;
+}
+
+/* Home Section */
+.home {
+     display: flex;
+  flex-direction: column; /* يخلي العناصر فوق بعض */
+  align-items: center;    /* يخليهم في النص */
+  text-align: center;     /* يخلي النصوص في النص */
+  gap: 30px;              /* مسافة بين النص والصورة */
+}
+
+.home-info h1 {
+    font-size: 55px;
+    margin-bottom: 4px;
+    color: #7cf03d;
+    margin-top: 70px;
+}
+
+.home-info h2 {
+    font-size: 32px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.home-info h2 span {
+     position: absolute;   /* كان fixed، خليته relative */
+    text-align: center;
+    color: transparent;
+    animation: display-text 12s infinite linear;
+    animation-delay: calc(-4s * var(--i));
+}
+
+.home-info h2 span::before {
+    content: attr(data-text);
+    position: absolute;
+     transform: translateX(-px);
+    width: 0;
+    margin-right: 500;
+    border-right: 2px solid #7cf03d;
+    color: #7cf03d;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fill-text 4s infinite linear;
+    animation-delay: calc(-4s * var(--i));
+}
+.skills-section {
+  background: #0b0f0a;
+  color: #7cf03d;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-box {
+  background: rgba(16,20,14,0.8);
+  padding: 20px 30px;
+  border-radius: 12px;
+  border: 1px solid #7cf03d;
+  box-shadow: 0 0 20px rgba(124,240,61,0.4);
+  width: 400px;
+}
+
+.skills-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skills-header h1 {
+  margin: 0;
+  color: #7cf03d;
+}
+
+.close-btn {
+  color: #7cf03d;
+  text-decoration: none;
+  font-size: 18px;
+  border: 1px solid #7cf03d;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.close-btn:hover {
+  background: #7cf03d;
+  color: #0b0f0a;
+}
+
+
+@keyframes fill-text {
+    0%   { width: 0%; }
+    50%  { width: 100%; }   /* الكتابة كاملة */
+    100% { width: 0%; }      /* المسح مباشرة */
+}
+
+@keyframes display-text {
+   10%   { display: inline-block; }
+    30%  { display: inline-block; }
+    33%  { display: none; }   /* إخفاء سريع */
+    100% { display: none; }
+}
+
+
+.home-info p {
+    font-size: 16px;
+    margin-top: 20;
+    margin-bottom: 50;
+    color: #ccc;
+}
+.card {
+    margin-left: 36%;
+    margin-top: 40;
+    margin-bottom: 50;
+  
+  width: 190px;
+  height: 254px;
+  border-radius: 20px;
+  background: #1f242d5d;
+  position: relative;
+  padding: 1.8rem;
+  border: 2px solid #c3c6ce;
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+.text-body {
+  color: rgb(134, 134, 134);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+
+/* Text */
+.text-title {
+  font-size: 1.5em;
+  color: #7cf03d;
+  font-weight: bold;
+}
+
+/* Hover */
+.card:hover {
+  border-color: #51e600;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card:hover .card-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
+
+
+.card-details {
+  color: black;
+  height: 100%;
+  gap: .5em;
+  display: grid;
+  place-content: center;
+}
+
+.card-button {
+  transform: translate(-50%, 125%);
+  width: 60%;
+  border-radius: 1rem;
+  border: none;
+  background-color: #008bf8;
+  color: #fff;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.flip-card {
+  background-color: transparent;
+  box-shadow: #51e600;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+  margin-left: 22%;
+  margin-top: 50;
+  margin-bottom: 50;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:active .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1f242d4b;
+  border: 2px solid #7cf03d;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  color: #7cf03d;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.flip-card-back ul {
+  list-style: none;
+  padding: 0;
+}
+
+.flip-card-back li {
+  margin: 6px 0;
+  color: #ccc;
+}
+
+
+/* Buttons & Social */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 2;
+
+    padding: 10px 30px;
+    background-color: #7cf03d;
+    border: 2px solid #51e600;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #7cf03d;
+    transition: .5s;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f242d;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: #7cf03d;
+    box-shadow: 0 0 15px #7cf03d;
+}
+
+.home-info .btn-sci {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.home-info .btn-sci .sci {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.home-info .btn-sci .sci a {
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #7cf03d;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #7cf03d;
+    margin-left: 6px;
+    transition: .5s;
+}
+
+.home-info .btn-sci .sci a:hover {
+    background-color: #7cf03d;
+    color: #1f242d;
+    box-shadow: 0 0 10px #7cf03d;
+}
+
+/* Image Box */
+.home-img .img-box {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    mix-blend-mode: lighten;
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(0deg);
+    animation: rotate 10s linear infinite;
+    background: conic-gradient(transparent, transparent, transparent, #7cf03d);
+    border-radius: 50%;
+}
+
+.home-img .img-box::after {
+    animation-delay: -5s;
+}
+
+@keyframes rotate {
+    100% { transform: rotate(360deg); }
+}
+
+.home-img .img-box .img-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.home-img .img-box .img-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 1;
+    object-position: center;
+}
+
+/* About Section */
+.about {
+    padding: 60px 9%;
+    background-color: #2c3e50;
+}
+
+.about h2 {
+    color: #7cf03d;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 9%;
+    background-color: #1f242d;
+}
+
+.contact h2 {
+    color: #7cf03d;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 18px;
+    color: #ccc;
+}
+.margin {
+    margin-top: 20px;
+    margin-right: 300px;
+}
